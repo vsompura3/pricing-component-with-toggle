@@ -1,0 +1,226 @@
+/* 
+
+===== INDEX =====
+1. Custom Properties
+2. Reset
+3. Base Styling
+4. Typography
+5. Components
+6. Layout
+7. Individual Section
+
+*/
+
+/* Custom Properties */
+:root {
+	--ff-base: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+	--clr-primary-100: hsl(236, 72%, 79%);
+	--clr-primary-200: hsl(237, 63%, 64%);
+
+	--clr-neutral-100: hsl(240, 78%, 98%);
+	--clr-neutral-200: hsl(234, 14%, 74%);
+	--clr-neutral-300: hsl(233, 13%, 49%);
+	--clr-neutral-400: hsl(232, 13%, 33%);
+}
+
+/* Reset */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+body,
+section,
+article,
+span,
+button,
+aside,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+input,
+label,
+button,
+select,
+textarea,
+optgroup {
+	font: inherit;
+}
+
+/* Base Styling */
+
+body {
+	font-family: var(--ff-base);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+	line-height: 1;
+}
+
+/* Typography */
+
+/* Components & Utilities */
+.btn {
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	width: 100%;
+	padding: 0.5em 0;
+	border-radius: 4px;
+}
+
+.bg-light {
+	--bg: linear-gradient(to right, var(--clr-primary-100), var(--clr-primary-200));
+	--fg: #fff;
+	--accent: var(--clr-neutral-400);
+	--clr-border: var(--clr-neutral-300);
+	background: #fff;
+}
+
+.bg-accent {
+	--bg: #fff;
+	--fg: var(--clr-primary-200);
+	--accent: #fff;
+	--clr-border: var(--clr-neutral-200);
+	background: linear-gradient(to right, var(--clr-primary-100), var(--clr-primary-200));
+}
+
+/* Layout */
+.container {
+	display: flow-root;
+	position: relative;
+	min-height: 100vh;
+	z-index: 1;
+	background-color: var(--clr-neutral-100);
+}
+
+.left,
+.right {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: min(70%, 400px);
+}
+
+.right {
+	right: 0;
+	background-image: url(./images/bg-top.svg);
+	background-position: 100% 0;
+}
+
+@media (min-width: 40em) {
+	.left,
+	.right {
+		width: 50%;
+	}
+
+	.left {
+		left: 0;
+		background-image: url(./images/bg-bottom.svg);
+		background-position: 0 100%;
+	}
+}
+
+/* Individual Section */
+
+.wrapper {
+	position: inherit;
+	z-index: 2;
+	width: 90%;
+	margin: 4em auto;
+	text-align: center;
+}
+
+.pricing-title {
+	margin-bottom: 2em;
+}
+
+.pricing-title h1 {
+	font-size: 2.25rem;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+
+.card {
+	color: var(--accent);
+	padding: 2em;
+	border-radius: 6px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+	margin-top: 1rem;
+	font-size: 4rem;
+}
+
+.card ul {
+	margin-top: 1.5rem;
+}
+
+.card li {
+	border-top: 1px solid var(--clr-border, #000);
+	padding: 0.5em 0;
+}
+
+.card li:last-child {
+	border-bottom: 1px solid var(--clr-border, #000);
+}
+
+.card a {
+	margin-top: 1.5rem;
+	background: var(--bg, #000);
+	color: var(--fg, #fff);
+}
+
+@media (min-width: 40em) {
+	.cards {
+	}
+}
