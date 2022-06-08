@@ -1,105 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- displays site properly based on user's device -->
-
-		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-		<link rel="stylesheet" href="style.css" />
-		<title>Frontend Mentor | [Pricing Component with Toggle Master]</title>
-
-		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-		<style>
-			.attribution {
-				font-size: 11px;
-				text-align: center;
-			}
-			.attribution a {
-				color: hsl(228, 45%, 44%);
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<!-- Background Pattern -->
-			<div class="left"></div>
-			<div class="right"></div>
-			<!-- Content -->
-			<div class="wrapper">
-				<div class="pricing-title">
-					<h1>Our Pricing</h1>
-					<p>Annual</p>
-				</div>
-				<div class="cards">
-					<div class="card bg-light">
-						<span>Basic</span>
-						<h2>&dollar;19.99</h2>
-						<!-- &dollar;199.99 -->
-						<ul>
-							<li>500 GB Storage</li>
-							<li>2 Users Allowed</li>
-							<li>Send up to 3 GB</li>
-						</ul>
-						<a href="#" class="btn">Learn More</a>
-					</div>
-					<div class="card bg-accent">
-						<span>Professional</span>
-						<h2>&dollar;24.99</h2>
-						<!-- &dollar;199.99 -->
-						<ul>
-							<li>1 TB Storage</li>
-							<li>5 Users Allowed</li>
-							<li>Send up to 10 GB</li>
-						</ul>
-						<a href="#" class="btn">Learn More</a>
-					</div>
-					<div class="card bg-light">
-						<span>Master</span>
-						<h2>&dollar;39.99</h2>
-						<!-- &dollar;199.99 -->
-						<ul>
-							<li>2 TB Storage</li>
-							<li>10 Users Allowed</li>
-							<li>Send up to 20 GB</li>
-						</ul>
-						<a href="#" class="btn">Learn More</a>
-					</div>
-				</div>
-				<div class="attribution">
-					Challenge by
-					<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-					Coded by <a href="https://vaibhavsompura.netlify.app">Vaibhav Sompura</a>.
-				</div>
-			</div>
-		</div>
-		<!-- 
-  Our Pricing
-  Annually
-  Monthly
-
-  Basic
-  &dollar;19.99
-  &dollar;199.99
-  500 GB Storage
-  2 Users Allowed
-  Send up to 3 GB
-  Learn More
-
-  Professional
-  &dollar;24.99
-  &dollar;249.99
-  1 TB Storage
-  5 Users Allowed
-  Send up to 10 GB
-  Learn More
-
-  Master
-  &dollar;39.99
-  &dollar;399.99
-  2 TB Storage
-  10 Users Allowed
-  Send up to 20 GB
-  Learn More -->
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>
+      Frontend Mentor | Pricing Component with Toggle Master By Vaibhav Sompura
+    </title>
+  </head>
+  <body>
+    <!-- if it's a standalone component, remove the h1 [note: There must be only one h1 per page for accessibility.] -->
+    <h1 class="sr-only">Pricing Plans</h1>
+    <section class="container" aria-labelledby="prices-section">
+      <div class="bg-pattern">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+      <header>
+        <h2 id="prices-section">Our Pricing</h2>
+        <div class="price-toggle">
+          <label for="switch" class="gui-switch" style="--track-size: 4.5rem">
+            Annually
+            <input type="checkbox" id="switch" role="switch" />
+            Monthly
+          </label>
+        </div>
+      </header>
+      <div class="card-container">
+        <div class="card bg-light">
+          <div>
+            <p>Basic</p>
+            <span data-plan="basic">$199.99</span>
+          </div>
+          <ul>
+            <li>500 GB Storage</li>
+            <li>2 Users allowed</li>
+            <li>Send up to 3 GB</li>
+          </ul>
+          <button>Learn More</button>
+        </div>
+        <div class="card card--large bg-accent">
+          <div>
+            <p>Professional</p>
+            <span data-plan="professional">$249.99</span>
+          </div>
+          <ul>
+            <li>1 TB Storage</li>
+            <li>5 Users allowed</li>
+            <li>Send up to 10 GB</li>
+          </ul>
+          <button>Learn More</button>
+        </div>
+        <div class="card bg-light">
+          <div>
+            <p>Master</p>
+            <span data-plan="master">$399.99</span>
+          </div>
+          <ul>
+            <li>2 TB Storage</li>
+            <li>10 Users allowed</li>
+            <li>Send up to 20 GB</li>
+          </ul>
+          <button>Learn More</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://vaibhavsompura.netlify.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Vaibhav Sompura</a
+      >.
+    </footer>
+  </body>
 </html>
